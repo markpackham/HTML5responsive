@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, Serif;
+    background-color: #cccccc;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background-color: blue;
+    overflow: hidden;
+    height: 63px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: lightblue;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar ul {
+    margin: 8px 0 0 0;
+    list-style: none;
+}
+
+.navbar a:hover {
+    background-color: lightgrey;
+    color: black;
+}
+
+.side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    /* Make sure it sits ontop of anything */
+    z-index: 1;
+    /*Keep in top 0 position */
+    top: 0;
+    left: 0;
+    background-color: #111;
+    /* We want it a little see through */
+    opacity: 0.9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    /* We want it to smoothly open at half a second*/
+    transition: 0.5s;
+}
+
+.side-nav a {
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 22px;
+    color: lightgrey;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-nav a:hover {
+    color: white;
+}
+
+.side-nav .btn-close {
+    position: absolute;
+    top: 0;
+    right: 22px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left 0.5s;
+    padding: 20px;
+    overflow: hidden;
+    width: 100%;
+}
+
+@media (max-width: 568px) {
+    .navbar-nav {
+        display: none
+    }
+}
+
+/*
+We can hide the slidebar until it is needed
+@media (min-width: 568px) {
+    .open-slide {
+        display: none
+    }
+}
+*/
