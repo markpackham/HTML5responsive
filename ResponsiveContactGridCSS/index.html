@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mobile First Responsive Contact Form</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- we want to be able to use icons for the company info, things like phones and email symbols -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="brand"><span>Mobile First</span> Grid CSS</h1>
+    <!-- animated means we want to use animate.css and have it come in from the left -->
+    <div class="wrapper animated bounceInLeft">
+        <div class="company-info">
+            <h3>Web Design Stuff</h3>
+            <ul>
+                <li><i class="fa fa-road"></i> A Street</li>
+                <li><i class="fa fa-phone"></i> A Phone Number</li>
+                <li><i class="fa fa-envelope"></i> An Email Address</li>
+            </ul>
+        </div>
+        <div class="contact">
+            <h3>Email Us</h3>
+            <form>
+                <p>
+                    <label>Name</label>
+                    <input type="text" name="name">
+                </p>
+                <p>
+                    <label>Company</label>
+                    <input type="text" name="compnay">
+                </p>
+                <p>
+                    <label>Email</label>
+                    <input type="email" name="email">
+                </p>
+                <p>
+                    <label>Phone Number</label>
+                    <input type="text" name="name">
+                </p>
+                <p class="full">
+                    <label>Message</label>
+                    <textarea name="message" rows="5"></textarea>
+                </p>
+                <p class="full">
+                    <button>Submit</button>
+                </p>
+            </form>
+        </div>
+        <p class="company-info">Learnt from
+            https://www.youtube.com/watch?v=Sb5qOa3R4hY&list=PLillGF-RfqbZTASqIqdvm1R5mLrQq79CU&index=12</p>
+    </div>
+</div>
+</body>
+</html>
