@@ -16,8 +16,8 @@ a, a:hover {
     text-decoration: none;
 }
 
-footer p {
-    text-align: center;
+footer{
+    padding: 30px;
 }
 
 .navbar-default {
@@ -68,6 +68,18 @@ footer p {
     color: #666666;
 }
 
-#info1 .info-right{
+#info1 .info-right {
     margin-top: 90px;
+}
+
+#info2 {
+    margin: 20px 0 60px 0;
+}
+
+#contact {
+    background: url("../img/image3.png");
+    padding: 40px;
+    color: #ffffff;
+    border-top: #333333 7px solid;
+    border-bottom: #333333 7px solid;
 }
