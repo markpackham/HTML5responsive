@@ -103,7 +103,7 @@ a, a:hover {
     color: #ffbbbc;
 }
 
-.main-color-bg, .list-group-item.active {
+.main-color-bg, .list-group-item.active, .panel-default > .panel-heading {
     background-color: #e74c3c;
     border-color: #c0392b;
     color: #ffffff;
@@ -131,14 +131,15 @@ a, a:hover {
     color: #333333;
 }
 
-
 /* Progress Bars */
-.progress-bar{
+.progress-bar {
     background: #333333;
     color: #ffffff;
 }
 
-
+.dash-box {
+    text-align: center;
+}
 
 /*Navbar for mobile */
 
@@ -158,4 +159,8 @@ a, a:hover {
         color: #ffbbbc;
         background-color: #c0392b;
     }
+}
+
+.code-origin {
+    text-align: center;
 }
