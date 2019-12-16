@@ -12,7 +12,6 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script defer href="main.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Mobile First Web App</title>
   </head>
@@ -90,5 +89,13 @@
         </li>
       </ul>
     </footer>
+    <script>
+      /*
+      Fade out the splash page in 2 seconds
+      */
+      setTimeout(() => {
+        document.getElementById("splash").classList.add("fade");
+      }, 2000);
+    </script>
   </body>
 </html>

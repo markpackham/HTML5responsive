@@ -11,7 +11,18 @@
 
 html,
 body {
+  height: 100%;
+}
+
+body {
   font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  /* We want a sticky footer stuck at the bottom, this helps us */
+  flex: 1 0 auto;
 }
 
 .container {
@@ -81,6 +92,79 @@ body {
   box-shadow: 1px 1px 2px #ccc;
 }
 
+.grid .item h4 {
+  margin-bottom: 5px;
+}
+
+.grid .item p {
+  font-size: 14px;
+  color: var(--secondary-color);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
 .grid .item img {
   width: 30px;
+  align-self: flex-end;
+}
+
+.app-footer {
+  background: #f4f4f4;
+  color: #444;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+  /* Stick footer to bottom of page */
+  flex-shrink: 0;
+}
+
+.app-footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.app-footer ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-footer ul li i {
+  font-size: 22px;
+}
+
+/* Splash */
+#splash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary-color);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s;
+}
+
+#splash img {
+  width: 300px;
+}
+
+#splash.fade {
+  opacity: 0;
+}
+
+/* LARGE screens */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid .item img {
+    width: 60px;
+  }
 }
