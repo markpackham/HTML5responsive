@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Emmet tricks</title>
+    <style>
+      /* Emmet is also great for CSS */
+      .class {
+        /* pos */
+        position: relative;
+        /* bgc */
+        background-color: #fff;
+        /* w10em */
+        width: 10em;
+        /* h10% */
+        height: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Emmet tricks learned from https://www.youtube.com/watch?v=V8vizNQKtx0
+    </h1>
+    <h2>Cheat sheet, https://docs.emmet.io/cheat-sheet/</h2>
+    <p>Emmet works with both Html and CSS</p>
+    <p><pre>
+        /* Emmet is also great for CSS */
+        .class {
+          /* pos */
+          position: relative;
+          /* bgc */
+          background-color: #fff;
+          /* w10em */
+          width: 10em;
+          /* h10% */
+          height: 10%;
+        }
+    </pre></p>
+    <p>
+      Achived by doing this with Emmet:
+      <br />
+      (header>h2{Heading}+nav>ol>li*5>a{Link $})+main+footer
+    </p>
+    <header>
+      <h2>Heading</h2>
+      <nav>
+        <ol>
+          <li><a href="">Link 1</a></li>
+          <li><a href="">Link 2</a></li>
+          <li><a href="">Link 3</a></li>
+          <li><a href="">Link 4</a></li>
+          <li><a href="">Link 5</a></li>
+        </ol>
+      </nav>
+    </header>
+    <main></main>
+    <footer></footer>
+    <p>
+      Another Emmet example: <br />
+      form:post>(.group>label+input:text)+(.group>label+input:number)
+    </p>
+    <form action="" method="post">
+      <div class="group">
+        <label for=""></label><input type="text" name="" id="" />
+      </div>
+      <div class="group">
+        <label for=""></label><input type="number" name="" id="" />
+      </div>
+    </form>
+    <div class="purple"><span class="cyan"></span></div>
+  </body>
+</html>
