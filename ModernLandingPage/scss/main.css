@@ -205,4 +205,41 @@ section {
     shape-margin: 2em;
   }
 }
+
+.product {
+  background: radial-gradient(var(--clr-inner, red), var(--clr-outer, yellow));
+  padding: 3em;
+  border: radius 3em;
+  margin-bottom: 3em;
+  text-align: center;
+}
+
+.product__title {
+  font: size 4rem;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.2);
+}
+
+.hero {
+  --clr-accent: #faa700;
+}
+
+.shoe-red {
+  --clr-inner: #faa700;
+  --clr-outer: #e48d00;
+  --clr-accent: #a1173c;
+}
+
+.shoe-white {
+  --clr-inner: #fce4b3;
+  --clr-outer: #eac886;
+  --clr-accent: #2f4858;
+}
+
+.shoe-blue {
+  --clr-inner: #6dd5ed;
+  --clr-outer: #2193b0;
+  --clr-accent: #008951;
+}
 /*# sourceMappingURL=main.css.map */
