@@ -34,6 +34,18 @@ section {
 }
 
 .split {
+  display: flex;
+  // gap isn't supported by Safari
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  // The & just grabs the .split so we're doing .split > *
+  & > * {
+    // flex-basis request the ideal size so it has a width & max-width all in one
+    flex-basis: 30%;
+    min-width: 15em;
+  }
 }
 
 // any element that is the direct child of spacing
@@ -52,11 +64,7 @@ section {
   padding: 0.5em 1.25em;
   background: var(--clr-accent, blue);
   border-radius: 0.25em;
-  -webkit-transition: opacity 250ms linear, -webkit-transform 250ms ease-in-out;
-  transition: opacity 250ms linear, -webkit-transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out, opacity 250ms linear;
-  transition: transform 250ms ease-in-out, opacity 250ms linear,
-    -webkit-transform 250ms ease-in-out;
 }
 
 .btn:hover,
@@ -89,17 +97,113 @@ section {
   text-align: center;
   padding: 15em 0;
   background: #222;
-}
 
-// @supports lets you specify declarations that depend on a browser's support for
-// one or more specific CSS features. This is called a feature query.
-// it will be commented out if the browser isn't supported
-@supports (background-blend-mode: multiply) {
-  .hero {
+  // @supports lets you specify declarations that depend on a browser's support for
+  // one or more specific CSS features. This is called a feature query.
+  // it will be commented out if the browser isn't supported
+  @supports (background-blend-mode: multiply) {
     background: url(../img/shoe-3.png), radial-gradient(#444, #111);
     background-blend-mode: multiply;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;
+  }
+}
+
+.featured {
+  background: #eee;
+
+  &__item {
+    display: block;
+    position: relative;
+    transform: scale(0.85);
+    transition: transform 250ms ease-in-out;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    line-height: 1.2;
+
+    // enlarged our show when hovered over
+    &:hover,
+    &:focus {
+      transform: scale(1);
+
+      .featured__details {
+        opacity: 1;
+        text-shadow: 0 0 2em rgba(#fff, 1);
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      padding: 75% 75% 0 0;
+      border-radius: 50%;
+      background: #2193b0;
+      z-index: -1;
+    }
+  }
+
+  &__details {
+    opacity: 0;
+    transition: opacity 250ms linear;
+
+    span {
+      display: block;
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.product {
+  background: radial-gradient(
+    var(--clr-inner, limegreen),
+    var(--clr-outer, purple)
+  );
+  padding: 3em;
+  border-radius: 1em;
+  margin-bottom: 5em;
+  text-align: center;
+
+  &__title {
+    font-size: clamp(3rem, calc(5vw + 1rem), 5.5rem);
+    text-transform: uppercase;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 0 0.2em rgba(#000, 0.2);
+  }
+
+  &__image {
+    margin: -5em 0 0 0;
+  }
+
+  @media (min-width: 45em) {
+    text-align: left;
+    margin-bottom: 9em;
+
+    &__title {
+      margin: 0;
+    }
+
+    &__image {
+      float: right;
+      width: 65%;
+      // outline: 2px solid red;
+      shape-outside: url(../img/shoe-1.png);
+      shape-margin: 1em;
+      margin: 0 -5em 0 0;
+    }
+
+    &.shoe-left {
+      .product__image {
+        float: left;
+        shape-outside: url(../img/shoe-2.png);
+        margin: 0 0 0 -5em;
+        shape-margin: 2em;
+      }
+    }
   }
 }
