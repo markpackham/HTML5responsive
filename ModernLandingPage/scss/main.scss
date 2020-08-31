@@ -33,6 +33,14 @@ section {
   margin: 0 auto;
 }
 
+.split {
+}
+
+// any element that is the direct child of spacing
+.spacing > * + * {
+  margin-top: var(--spacer, 2rem);
+}
+
 .btn {
   display: inline-block;
   text-decoration: none;
@@ -58,5 +66,40 @@ section {
   opacity: 0.9;
 }
 
-.main-title {
+.primary-title {
+  // fail safe font size if browser doesn't support clamp
+  font-size: 4rem;
+  // clamp takes three parameters: a min value, a preferred value, and a max value.
+  // in the most modern versions of css the calc part here wouldn't be needed
+  font-size: clamp(3rem, calc(5vw + 1 rem), 4.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(2.5rem, calc(5vw + 1rem), 4rem);
+  line-height: 1;
+  color: #17353d;
+  margin-bottom: 5rem;
+}
+
+.hero {
+  color: white;
+  text-align: center;
+  padding: 15em 0;
+  background: #222;
+}
+
+// @supports lets you specify declarations that depend on a browser's support for
+// one or more specific CSS features. This is called a feature query.
+// it will be commented out if the browser isn't supported
+@supports (background-blend-mode: multiply) {
+  .hero {
+    background: url(../img/shoe-3.png), radial-gradient(#444, #111);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 }
